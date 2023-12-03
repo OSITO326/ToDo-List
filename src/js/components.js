@@ -7,6 +7,7 @@ const txtInput = document.querySelector('.new-todo');
 const btnDelete = document.querySelector('.clear-completed');
 const ulFilters = document.querySelector('.filters');
 const anchorFilters = document.querySelectorAll('.filtro');
+const spanCount = document.querySelector('.todo-count');
 
 export const createTodoHtml = (todo) => {
   const htmlTodo = `
@@ -25,6 +26,14 @@ export const createTodoHtml = (todo) => {
   div.innerHTML = htmlTodo;
   divTodoList.append(div.firstElementChild);
   return div.firstElementChild;
+};
+
+export const createCountHtml = () => {
+  const countHtml = `<strong>${todoList.countTodo()} pendiente(s)<strong>`;
+  const strong = document.createElement('strong');
+  strong.innerHTML = countHtml;
+  spanCount.append(strong.firstElementChild);
+  return strong.firstElementChild;
 };
 
 // Events

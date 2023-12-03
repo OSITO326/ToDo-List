@@ -6,6 +6,16 @@ export class TodoList {
     this.loadLocalStorage();
   }
 
+  countTodo() {
+    let count = 0;
+    for (const todo of this.todos) {
+      if (!todo.completed) {
+        count++;
+      }
+    }
+    return count;
+  }
+
   newTodo(todo) {
     this.todos.push(todo);
     this.saveLocalStorage();
